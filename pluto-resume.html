@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Case Study: Pluto Resume Builder - Will Musto - Sales Ops Systems Portfolio</title>
+<meta charset="UTF-8">
+<meta name="description" content="How I built a resume formatting web app that saved recruiters 8–12 hours per week by automating PDF generation from raw CV inputs.">
+<meta name="keywords" content="sales ops, CRM systems, forecasting, RevOps">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Case Study: Pluto Resume – Will Musto">
+<meta property="og:description" content="How I built a resume formatting app that saved recruiters 8–12 hours/week by auto-generating CVs from raw data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mus.to/pluto-resume.html">
+
+<!-- Favicon -->   
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/main.css"/>
+
+
+
+<!-- Google Web fonts -->    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+
+<!-- Font icons -->
+<link rel="stylesheet" href="icon-fonts/flat-icon/flaticon.css"/>
+<link rel="stylesheet" href="icon-fonts/font-awesome/css/all.min.css"/>
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="dark-version scroll-animation-on">
+
+<!-- Preloader  -->
+<div id="loader" class="preloader">
+  <div class="loading">
+    <div class="profile-image">
+      <img src="images/profile-loader.jpg" alt="">
+      <svg style="position: absolute;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <circle class="js-circle circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+        <circle class="js-circle circletwo" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+      </svg>
+    </div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+
+<div class="page-cover">
+  <div id="page-scroll">
+    <div class="barba-wrapper" data-barba="wrapper">
+      <main data-barba="container">
+    <!-- Page Wrapper -->
+    <div class="container">
+      <div class="page-wrapper">
+
+        <header id="fixed">
+          <div class="hamburger hamburger--elastic"> 
+            <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> 
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+		
+			<!-- Page Caption -->
+<h5 class="underline-title">Will Musto - Case Study</h5>
+<div  class="spacer-30"></div>
+              
+        <!-- ARTICLE BLOG
+        ================================================== --> 
+        <div class="single-blog">
+          <!-- Page Caption -->
+          <div class="single-post-title">
+		  <div><center><p><a href="compensation-redesign.html">← Previous</a> | <a href="dialpad-rollout.html">Next →</a></p></center></div>
+              <h1 class="big-title">Resume Ops Rebuild: From Templates to Scalable Output</h1>
+				  <p class="entry-subtitle">How we automated resume output, cut prep time by 80%, and scaled without hiring admin staff</p><br>
+				  <p class="reading-time">⏱ Estimated reading time: 3.5 minutes</p>
+		  </div>
+          <div class="spacer-45"></div>
+          <!-- Image -->
+          <!-- <div class="about-image clip-animation"  data-delay="1" data-duration="2">
+            <img src="images/blog-1.jpg" alt="">
+          </div> -->
+          <div class="spacer-45"></div>
+          <!-- Article Text -->
+          <div class="blog-entry scale-animation" data-delay="1" data-duration="2">
+		<h2>Overview</h2>
+		<p>One of the first choke points we ran into as our team and activity volume grew was resume formatting. Our Microsoft Word-based process broke constantly and cost the team countless hours per week. With no version control, templates drifted and files were regularly overwritten or lost.</p><br>
+		<p>I led the design and rollout of Pluto Resume, a custom tool that eliminated formatting from the workflow and standardized every output. The product saved each recruiter 8–10 hours per week, enforced brand consistency, and gave us the opportunity to scale without adding admin staff.</p><br>
+		<h2>From Pain to Product</h2>
+		<p>I kicked off the project after sitting through my third consecutive Friday morning training on how to format resumes. As a newer hire, I was frustrated. We weren’t learning how to close more deals; we were stuck in Formatting 101. Recruiters were wasting time on cleanup that had nothing to do with candidate quality, and everyone knew it.</p><br>
+		<p>I started by building a prototype in Google Forms, just to prove we could standardize inputs and lock format. It wasn’t flexible enough for real-world use, but it was enough to get buy-in for a $300 MVP. From there, I spec’d the functional requirements, designed the interface, and acted as product owner while working with a third-party developer.</p><br>
+		<p>Several weeks later, we shipped the full product for just $3.2K off a $10K budget. I led training and rollout, sunset the old Word template, and positioned Pluto Resume as the single source of truth for every outgoing resume.</p><br>
+		<h2>Implementation</h2>
+		<p>We built a custom internal web app backed by a full database that acted as both a structured resume builder and the system of record for all candidate delivery. Drag-and-drop section controls let recruiters customize resume order without touching layout or formatting. Instead of free-text editing, we structured each resume section with defined input fields to ensure clean data and consistent output.</p><br>
+		<p>The app used jsPDF to generate standardized PDFs in-browser, then pushed them to Google Drive via API with consistent file names and folder structure. Layout and styling were hard-coded, so every resume followed the same standard. I used to describe it as our version of a product label: Coca-Cola has bottle design, we had resume design.</p><br>
+		<p>Once Pluto was live, we pulled the old Word template from shared drives to prevent drift and lock in the new system.</p><br>
+		<h2>Outcomes</h2>
+		<p>The tool eliminated a time sink and redefined how resumes were produced.</p><br>
+		<ul class="case-study-list">
+		  <li>Saved each recruiter 8–10 hours per week that had been spent formatting and reviewing resumes</li>
+		  <li>Increased candidate throughput per recruiter by 20–30%, with resume prep time dropping from 75+ minutes to under 15</li>
+		  <li>Eliminated formatting drift across all resume output; structure, branding, and naming were enforced system-wide</li>
+		  <li>Supported team growth from 6 to 15 without adding admin support</li>
+		  <li>Turned internal tooling into a policy enforcer by making Pluto the sole source of resume output</li>
+		</ul><br>
+		<h2>Reflection</h2>
+		<p>Pluto Resume proved that well-designed internal tooling can create growth without adding headcount. Systemizing a piece of the process that the team was fighting every day contributed massively to our 6x revenue multiplication in a 4-year span.</p><br>
+		<p>It also clarified something I’ve kept in mind ever since: good internal tools don’t need to be flashy. If the UX respects how people actually work, adoption becomes automatic and manual work becomes obsolete.</p><br>
+		<h2>Key Takeaways</h2>
+		<ul class="case-study-list">
+		  <li>Replaced fragile Word templates with a custom web app backed by a structured database</li>
+		  <li>Used drag-and-drop controls and form-based inputs to enforce layout standards without slowing recruiters down</li>
+		  <li>Integrated jsPDF and Google Drive API for automated output, file naming, and delivery</li>
+		  <li>Eliminated formatting drift and standardized branding across all resume output</li>
+		  <li>Supported 6→15 team scale without additional admin support; saved each recruiter 8–10 hours/week</li>
+		</ul><br>
+          </div>
+		  <div class="categories">
+			  <span class="category">#UXDesign</span>
+			  <span class="category">#ScaleEnablement</span>
+			  <span class="category">#InternalTooling</span>
+		  </div>
+        </div>
+
+        <div class="spacer-60"></div>
+      </div> <!-- page wrapper end -->
+    </div><!-- container -->
+                  <!-- FOOTER -->
+        <footer>
+          <div class="container">
+            <div class="footer-inner">
+              <div class="copyright">
+                <p>Copyright 2025 - All rights reserved</p>
+              </div>
+              <ul class="social">
+				<li><a href="mailto:&#119;&#105;&#108;&#108;&#064;&#109;&#117;&#115;&#046;&#116;&#111;">Contact</a></li>              
+			  <li><a target="_blank" href="https://linkedin.com/in/willmusto">LinkedIn</a></li>
+                <li><a href="resume.html">Resume</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+                </main>
+              </div>
+            </div>
+          </div>
+          <div class="bg-image" style="background-image: url(images/bg.jpg);"></div>
+  
+<!-- Javascripts -->
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gqyHylICdokv-P1q2WtRihCFhiFnm_U&sensor=false"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

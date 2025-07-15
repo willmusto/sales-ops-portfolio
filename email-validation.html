@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Case Study: Automated Email Validation - Will Musto - Sales Ops Systems Portfolio</title>
+<meta charset="UTF-8">
+<meta name="description" content="How I built a Salesforce-integrated email validation system to reduce bounce rates, protect domain reputation, and support outbound scale.">
+<meta name="keywords" content="sales ops, CRM systems, forecasting, RevOps">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Case Study: Email Validation System – Will Musto">
+<meta property="og:description" content="How I built a Salesforce-integrated email validation system to reduce bounce rates, protect sender reputation, and improve cadence reliability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mus.to/email-validation.html">
+
+<!-- Favicon -->   
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/main.css"/>
+
+
+
+<!-- Google Web fonts -->    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+
+<!-- Font icons -->
+<link rel="stylesheet" href="icon-fonts/flat-icon/flaticon.css"/>
+<link rel="stylesheet" href="icon-fonts/font-awesome/css/all.min.css"/>
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="dark-version scroll-animation-on">
+
+<!-- Preloader  -->
+<div id="loader" class="preloader">
+  <div class="loading">
+    <div class="profile-image">
+      <img src="images/profile-loader.jpg" alt="">
+      <svg style="position: absolute;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <circle class="js-circle circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+        <circle class="js-circle circletwo" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+      </svg>
+    </div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+
+<div class="page-cover">
+  <div id="page-scroll">
+    <div class="barba-wrapper" data-barba="wrapper">
+      <main data-barba="container">
+    <!-- Page Wrapper -->
+    <div class="container">
+      <div class="page-wrapper">
+
+        <header id="fixed">
+          <div class="hamburger hamburger--elastic"> 
+            <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> 
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+		
+			<!-- Page Caption -->
+<h5 class="underline-title">Will Musto - Case Study</h5>
+<div  class="spacer-30"></div>
+              
+        <!-- ARTICLE BLOG
+        ================================================== --> 
+        <div class="single-blog">
+          <!-- Page Caption -->
+          <div class="single-post-title">
+		  <div><center><p><a href="kpi-framework.html">← Previous</a> | <a href="data-integrity-team.html">Next →</a></p></center></div>
+              <h1 class="big-title">Email Validation Workflow: Automating Deliverability at the Point of Entry</h1>
+				  <p class="entry-subtitle">How I replaced CSV triage with real-time validation inside Salesforce, saving hours and restoring confidence in outreach data</p><br>
+				  <p class="reading-time">⏱ Estimated reading time: 3 minutes</p>
+		  </div>
+          <div class="spacer-45"></div>
+          <!-- Image -->
+          <!-- <div class="about-image clip-animation"  data-delay="1" data-duration="2">
+            <img src="images/blog-1.jpg" alt="">
+          </div> -->
+          <div class="spacer-45"></div>
+          <!-- Article Text -->
+          <div class="blog-entry scale-animation" data-delay="1" data-duration="2">
+			<h2>Overview</h2>
+			<p>The idea came from a webinar: “What if our CRM could automatically tell us if emails were valid?”</p><br>
+			<p>Our manual email validation workflow was a bottleneck. Invalid addresses led to failed outreach and misfired cadences, costing time and damaging email deliverability at scale. Finding those invalids at scale required exporting to CSV, validating through NeverBounce, and re-importing the results. The process was tedious and often caused data loss.</p><br>
+			<p>I led the design and rollout of a real-time validation workflow using Salesforce Flow and NeverBounce’s API. The system automatically checked every new email on entry and revalidated all contacts in the database on a rolling 30-day schedule. Reps gained instant visibility into email health without leaving the Salesforce record page.</p><br>
+
+			<h2>From Peer Insight to Live Automation</h2>
+			<p>The project wasn’t assigned. It came up during a webinar with leaders from other search firms. Someone from another company asked, “What if our CRM could automatically tell us if emails were valid?” Our system could. It just didn’t yet.</p><br>
+			<p>I scoped and built the solution directly with a goal of eliminating manual triage; no more exports or re-imports, and no more waiting on an administrative assistant to get around to checking it off their to-do list. New emails were validated in real time using before save Flows, and each Contact was revalidated on a rolling 30-day schedule without user intervention.</p><br>
+			<p>The system surfaced invalid addresses using a custom field on the record, allowing reps to filter them out cleanly. Our Data Integrity team owned enrichment and resolution, getting those records back into motion with updated contact info. When enrichment was needed from tools like ZoomInfo, updates could be made directly in-platform and revalidated immediately.</p><br>
+
+			<h2>Implementation</h2>
+			<p>I built the validation logic in Salesforce using <code>before save</code> Flows and a direct API connection to NeverBounce. When a new Contact was created or an email was updated, the Flow triggered an API call to validate the address in real time. Results were stored as metadata on the Contact record and used to populate a custom checkbox field labeled “Valid Email?”</p><br>
+			<p>Any Contact that hadn’t been validated in the last 30 days was automatically included in an overnight batch job. This ensured continuous coverage of the full database without requiring user interaction.</p><br>
+			<p>The custom flag was a simple checkbox placed directly below the email address on the Contact layout for maximum visibility. It was also available as a filter in list views, making it easy for reps to screen for deliverability issues without leaving their workflow. All updates triggered automatically behind the scenes, keeping the data current and rep workflows clean.</p><br>
+
+			<h2>Outcomes</h2>
+			<p>The workflow didn’t just cut down on admin time; it gave reps confidence that their outreach would actually land. Validation was effectively instant and built directly into their existing flow, making follow-up faster and more predictable.</p><br>
+
+			<ul class="case-study-list">
+			  <li>Saved ~3 hours/week of manual triage previously spent exporting, validating, and re-importing records</li>
+			  <li>Reduced bounce rates by 8% across outbound campaigns</li>
+			  <li>Improved rep confidence in email quality and outreach effectiveness</li>
+			  <li>Enabled faster segmentation and follow-up by removing dirty data from the pipeline</li>
+			</ul><br>
+
+			<h2>Reflection</h2>
+			<p>This wasn't a novel idea. A rudimentary version of the process already existed, but we were missing the glue to connect the two systems seamlessy, and the initiative to make it invisible to the user.</p><br>
+			<p>What mattered wasn’t the validation logic, but the fact that reps didn’t have to think about it. The system caught bad data early and kept records clean. More importantly, it let reps move without second-guessing the tools in front of them.</p><br>
+
+			<h2>Key Takeaways</h2>
+			<ul class="case-study-list">
+			  <li>Built real-time email validation directly into Salesforce using Flow and NeverBounce’s API</li>
+			  <li>Replaced manual CSV processes with automated checks at record creation and rolling 30-day revalidations</li>
+			  <li>Designed record-level visibility through a custom checkbox field surfaced on the Contact layout</li>
+			  <li>Eliminated drag from email triage and kept reps focused on outbound execution</li>
+			  <li>Enabled clean handoff between reps and Data Integrity to resolve bad data without slowing outreach</li>
+			</ul><br>
+
+          </div>
+		  <div class="categories">
+			  <span class="category">#DataHygiene</span>
+			  <span class="category">#OutboundReadiness</span>
+			  <span class="category">#Salesforce</span>
+		  </div>
+        </div>
+
+        <div class="spacer-60"></div>
+      </div> <!-- page wrapper end -->
+    </div><!-- container -->
+                  <!-- FOOTER -->
+        <footer>
+          <div class="container">
+            <div class="footer-inner">
+              <div class="copyright">
+                <p>Copyright 2025 - All rights reserved</p>
+              </div>
+              <ul class="social">
+			  				<li><a href="mailto:&#119;&#105;&#108;&#108;&#064;&#109;&#117;&#115;&#046;&#116;&#111;">Contact</a></li>
+                <li><a target="_blank" href="https://linkedin.com/in/willmusto">LinkedIn</a></li>
+                <li><a href="resume.html">Resume</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+                </main>
+              </div>
+            </div>
+          </div>
+          <div class="bg-image" style="background-image: url(images/bg.jpg);"></div>
+  
+<!-- Javascripts -->
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gqyHylICdokv-P1q2WtRihCFhiFnm_U&sensor=false"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

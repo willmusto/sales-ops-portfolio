@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Case Study: Data Integrity Team - Will Musto - Sales Ops Systems Portfolio</title>
+<meta charset="UTF-8">
+<meta name="description" content="How I built and led a Data Integrity team to fix CRM hierarchies, enrich contact data, and enforce accuracy in Salesforce reporting and funnel hygiene.">
+<meta name="keywords" content="sales ops, CRM systems, forecasting, RevOps">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Case Study: Data Integrity Team – Will Musto">
+<meta property="og:description" content="How I built and led a Data Integrity team to fix CRM hierarchies, enrich contact data, and enforce Salesforce accuracy at scale.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mus.to/data-integrity-team.html">
+
+<!-- Favicon -->   
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/main.css"/>
+
+
+
+<!-- Google Web fonts -->    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+
+<!-- Font icons -->
+<link rel="stylesheet" href="icon-fonts/flat-icon/flaticon.css"/>
+<link rel="stylesheet" href="icon-fonts/font-awesome/css/all.min.css"/>
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="dark-version scroll-animation-on">
+
+<!-- Preloader  -->
+<div id="loader" class="preloader">
+  <div class="loading">
+    <div class="profile-image">
+      <img src="images/profile-loader.jpg" alt="">
+      <svg style="position: absolute;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <circle class="js-circle circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+        <circle class="js-circle circletwo" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
+      </svg>
+    </div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+
+<div class="page-cover">
+  <div id="page-scroll">
+    <div class="barba-wrapper" data-barba="wrapper">
+      <main data-barba="container">
+    <!-- Page Wrapper -->
+    <div class="container">
+      <div class="page-wrapper">
+
+        <header id="fixed">
+          <div class="hamburger hamburger--elastic"> 
+            <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> 
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+		
+	<!-- Page Caption -->
+<h5 class="underline-title">Will Musto - Case Study</h5>
+<div  class="spacer-30"></div>
+              
+        <!-- ARTICLE BLOG
+        ================================================== --> 
+        <div class="single-blog">
+          <!-- Page Caption -->
+          <div class="single-post-title">
+		  <div><center><p><a href="email-validation.html">← Previous</a> | <a href="outreach-rollout.html">Next →</a></p></center></div>
+              <h1 class="big-title">Data Integrity Infrastructure: Scaling CRM Hygiene Inside the Workflow</h1>
+				  <p class="entry-subtitle">How I operationalized contact creation, enrichment, and cleanup to support automation, segmentation, and compensation accuracy</p><br>
+				  <p class="reading-time">⏱ Estimated reading time: 5 minutes</p>
+		  </div>
+          <div class="spacer-45"></div>
+          <!-- Image -->
+          <!-- <div class="about-image clip-animation"  data-delay="1" data-duration="2">
+            <img src="images/blog-1.jpg" alt="">
+          </div> -->
+          <div class="spacer-45"></div>
+          <!-- Article Text -->
+          <div class="blog-entry scale-animation" data-delay="1" data-duration="2">
+		<h2>Overview</h2>
+		<p>The Data Integrity team existed to remove friction and make momentum possible across the funnel. It started with a short-term cleanup project researching a list of high-fit candidates that came with no contact data, but it surfaced a bigger problem: reps were losing time to broken records every day, and no one owned the fix.</p><br>
+		<p>The DI team handled research, validation, and cleanup inside Salesforce so reps didn’t have to stop and fix records before they could do their jobs. Invalid emails, outdated titles, duplicate entries, and broken account hierarchies were all surfaced automatically, cleaned in-line, and routed back into rep workflows without disruption.</p><br>
+		<p>By removing friction from the system, we increased the team’s productive output without adding headcount, while revenue scaled 6x in four years.</p><br>
+		<h2>Inside the Workflow</h2>
+		<p>Like our sales teams, the DI team lived in Salesforce. I set up logic to surface broken records automatically using validation rules, picklists, and custom field flags. The system flagged invalid emails through our NeverBounce integration and identified duplicates using matching rules, while other failure points led to records being routed into saved List Views or a repurposed Call List object for manual follow-up.</p><br>
+		<p>Each queue represented a different type of broken record. The DI team worked through them continuously, following policies ensuring that each queue had been processed within a certain number of days. Invalid emails were prioritized first, followed by duplicates, then Accounts missing people with specific job titles. ZoomInfo was the starting point for enrichment, followed by LinkedIn, and then direct research using company websites, press releases, and targeted Google queries. The team knew what to look for, where to check, and how to fix it without pulling anyone else in.</p><br>
+		<p>The DI team owned all record ingestion, both manual and bulk. When internet alerts surfaced a new job posting, they created a Lead, linked the hiring manager as a Contact, and pre-populated fields with role details, source links, and relevant metadata. On the candidate side, they added new Contacts proactively based on certification databases, org charts, LinkedIn, and direct research using company websites, press releases, and targeted Google queries. Leads represented potential client opportunities; Contacts represented potential candidates. No record entered the system without being checked, formatted, and made usable from day one.</p><br>
+		<h2>Outcomes</h2>
+		<p>The DI team made it possible for reps to move faster and for automation to run cleanly at scale. Reporting held up because the underlying records stayed accurate as volume increased. When the team was paused in 2019, breakages stacked up almost immediately: flagged records ballooned, and within months the database was near-universally described as “a mess” by reps, slowing productivity by pulling them off their call plans as they attempted to clean the database themselves.</p><br>
+		<p>Direct outcomes included:</p><br>
+		<ul class="case-study-list">
+			<li>Email bounce rates dropped by 8%</li>
+			<li>Reps stopped spending hours on record cleanup each week</li>
+			<li>Outreach cadences ran without interruption or skipped steps</li>
+			<li>KPI dashboards and pacing metrics reflected real pipeline behavior</li>
+			<li>Comp payout logic stayed accurate because activity linked to usable records</li>
+			<li>Revenue scaled 6x over four years without a breakdown in CRM usability</li>
+		</ul><br>
+		<h2>Reflection</h2>
+		<p>Building out this team and the processes they followed in their day-to-day reinforced something I’d already learned as a rep: in a high-volume sales environment, you can’t expect people to own the data and push the envelope on sales at the same time. Leadership seemed surprised by that (despite having more sales experience than I did), perhaps because their frame of reference was slower and lower-volume.</p><br>
+		<p>Centralizing data ownership did change how the org thought about CRM, though not always in the way I wanted. One downside was that reps started to treat CRM hygiene as someone else’s job. The mentality shifted from shared responsibility to offloading. That wasn’t unique to our org -- sales teams often default to “that’s not my job” when something falls outside direct pipeline pressure -- but it reinforced the tradeoff: if you want data integrity at scale, you have to own the system completely and accept that reps may disengage from the parts they no longer feel responsible for. If you want to grow quickly and sell fast, you must build data integrity into your sales system.</p><br>
+		<h2>Key Takeaways</h2>
+		<ul class="case-study-list">
+		  <li>Assigned ownership of data hygiene to a dedicated team embedded directly in Salesforce</li>
+		  <li>Structured intake, validation, and enrichment workflows layered with rep systems</li>
+		  <li>Built field-level logic to surface bad records automatically and return clean ones to workflows</li>
+		  <li>Scaled record accuracy across a narrow TAM without slowing rep velocity</li>
+		  <li>Reinforced pipeline trust by linking data quality to forecasting, cadence logic, and comp systems</li>
+		</ul><br>
+          </div>
+		  <div class="categories">
+			  <span class="category">#DataHygiene</span>
+			  <span class="category">#RecordIntegrity</span>
+			  <span class="category">#SystemEmbeddedOps</span>
+		  </div>
+        </div>
+
+        <div class="spacer-60"></div>
+      </div> <!-- page wrapper end -->
+    </div><!-- container -->
+                  <!-- FOOTER -->
+        <footer>
+          <div class="container">
+            <div class="footer-inner">
+              <div class="copyright">
+                <p>Copyright 2025 - All rights reserved</p>
+              </div>
+              <ul class="social">
+			  				<li><a href="mailto:&#119;&#105;&#108;&#108;&#064;&#109;&#117;&#115;&#046;&#116;&#111;">Contact</a></li>
+                <li><a target="_blank" href="https://linkedin.com/in/willmusto">LinkedIn</a></li>
+                <li><a href="resume.html">Resume</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+                </main>
+              </div>
+            </div>
+          </div>
+          <div class="bg-image" style="background-image: url(images/bg.jpg);"></div>
+  
+<!-- Javascripts -->
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gqyHylICdokv-P1q2WtRihCFhiFnm_U&sensor=false"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
