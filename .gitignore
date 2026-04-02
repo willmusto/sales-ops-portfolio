@@ -1,3 +1,8 @@
+# Deploy script and keys (local only)
+deploy.sh
+deploy_key
+deploy_key.pub
+
 # OS
 .DS_Store
 Thumbs.db
