@@ -2673,3 +2673,238 @@ main a:hover:not(nav a):not(header a):not(footer a):not(.btn):not(.social a) {
   opacity: 0.85;
 }
 
+/* ===================================================
+   Custom nav bar overrides
+   =================================================== */
+
+/* Fixed header bar */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 40px !important;
+  height: 60px !important;
+  background: rgba(18, 18, 18, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  z-index: 1000 !important;
+  pointer-events: all !important;
+  float: none !important;
+}
+
+header .wordmark {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+  pointer-events: all;
+  border-bottom: none !important;
+}
+
+header .wordmark:hover {
+  opacity: 0.7;
+}
+
+/* Page content sits below fixed header */
+.page-wrapper {
+  margin-top: 60px !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* Remove colored underline from section titles */
+.underline-title:after {
+  background: transparent !important;
+  display: none !important;
+}
+
+/* Desktop nav: hide hamburger, show links inline */
+@media screen and (min-width: 768px) {
+  header .hamburger {
+    display: none !important;
+  }
+
+  header nav {
+    float: none !important;
+    clear: none !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  header nav ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header nav ul li {
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    visibility: visible !important;
+    line-height: normal !important;
+    text-align: left !important;
+  }
+
+  header nav ul li a {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+  }
+
+  header nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+  }
+
+  header nav ul li a.active {
+    color: #fff !important;
+    text-decoration: none !important;
+    pointer-events: none;
+  }
+}
+
+/* Mobile nav: neutral hamburger + dropdown panel */
+@media screen and (max-width: 767px) {
+  header {
+    padding: 0 24px !important;
+  }
+
+  .hamburger {
+    background: transparent !important;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    background-color: #fff !important;
+  }
+
+  header nav {
+    display: none;
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(10, 10, 10, 0.97) !important;
+    padding: 24px 32px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    z-index: 999 !important;
+    float: none !important;
+    clear: none !important;
+    margin-top: 0 !important;
+  }
+
+  .header-is-active header nav {
+    display: block;
+  }
+
+  header nav ul li {
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    visibility: visible !important;
+    text-align: left !important;
+    line-height: 2.8rem !important;
+  }
+
+  header nav ul li a {
+    font-size: 16px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none !important;
+  }
+
+  header nav ul li a:hover,
+  header nav ul li a.active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+/* Case study back link */
+.cs-back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none !important;
+  border-bottom: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  transition: color 0.2s ease;
+}
+
+.cs-back-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* More case studies section */
+.cs-more {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-more > h5 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 20px;
+}
+
+.cs-more-item {
+  margin-bottom: 18px;
+}
+
+.cs-more-item a {
+  display: block;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cs-more-item a:hover {
+  color: #fff !important;
+}
+
+.cs-more-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 3px;
+}
+
+/* Tag filter */
+.category {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category.active {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+}
+
+.grid-item.hidden {
+  display: none !important;
+}
+
